@@ -104,8 +104,8 @@ export const DataManagerHeader: React.FC = () => {
  * This component displays the main content of the data manager page.
  */
 export const DataManager: React.FC = () => {
-  const activeSubSectionId = useSelector((state: RootState) => state.Menu.currentSubSection);
-  const activeSubSection = subSections.find((item) => item.id === activeSubSectionId);
+  
+
   return (
     <div className="data-manager">
       {/* {activeSubSection && <activeSubSection.Component />} */}

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Reducers/store";
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
-import Home from "../../pages/Home/Index";
+import { Navigate } from "react-router-dom";
+
 import { getJWTFromStorage } from "../../Reducers/slices/AuthSlice";
 
 export const PrivateRoute = ({ children }: { children: React.ReactNode }) => {

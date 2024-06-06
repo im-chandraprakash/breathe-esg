@@ -3,8 +3,7 @@ import Logo from "../Logo/Logo";
 import sections from "../../Utils/Sections";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../Reducers/slices/AuthSlice";
-import { setSection } from "../../Reducers/slices/MenuSlice";
-import { AppDispatch, RootState } from "../../Reducers/store";
+import { RootState } from "../../Reducers/store";
 
 /**
  * Sidebar component that displays a sidebar with navigation items and a collapse button.
@@ -17,7 +16,6 @@ export default function SideBar() {
         (state: RootState) => state.Menu.currentSection
     );
 
-    const usedispatch: () => AppDispatch = useDispatch;
     const dispatch = useDispatch();
 
     return (

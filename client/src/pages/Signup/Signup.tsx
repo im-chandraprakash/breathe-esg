@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Logo from "../../components/Logo/Logo";
-import { Loading } from "../../components/Loading/Loading";
-import { useDispatch } from "react-redux";
 import "../SignIn/Login.scss";
 import { signupUser } from "../../Utils/Authentication";
 import { Link } from "react-router-dom";
@@ -16,8 +14,6 @@ export default function Signup() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [confirmPassword, setConfirmPassword] = useState<string>("");
-    const dispatch = useDispatch();
-    const [error, setError] = useState("");
 
     const handleSignup = (e: any) => {
         e.preventDefault();
@@ -99,7 +95,7 @@ export default function Signup() {
                                 placeholder="Password"
                             />
                         </div>
-                        {error && <div className="error-div">{error}</div>}
+                        
                     </div>
                     <div className="submit-div">
                         <button

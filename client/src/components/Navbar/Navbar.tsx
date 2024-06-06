@@ -26,7 +26,7 @@ export default function Navbar() {
                 <Dropdown
                     menu={{
                         items,
-                        onClick: ({ item, key }) => {
+                        onClick: ({key }) => {
                             setSelected(key);
                         },
                     }}

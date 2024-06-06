@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useState } from "react";
 import "./Login.scss";
 import { loginUser } from "../../Utils/Authentication";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,17 +11,8 @@ interface User {
 function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    const handleUsernameChange = (e: any) => {
-        setEmail(e.target.value);
-    };
-
-    const handlePasswordChange = (e: any) => {
-        setPassword(e.target.value);
-    };
 
     const handleLogin = (e: any) => {
         e.preventDefault();
@@ -39,7 +30,9 @@ function SignIn() {
         <div className="authpage">
             <div className="welcome-div">
                 <div className="welcome-text">Welcome to</div>
-                <div className="auth-logo"><Logo/></div>
+                <div className="auth-logo">
+                    <Logo />
+                </div>
                 <div className="tagline">
                     We help you track your organisations metrics as per the ESG
                     Guidelines
@@ -87,7 +80,6 @@ function SignIn() {
                                 placeholder="Password"
                             />
                         </div>
-                        {error && <div className="error-div">{error}</div>}
                     </div>
                     <div className="external-auth-container">
                         <div className="external-auth-div">
@@ -121,9 +113,12 @@ function SignIn() {
                             Continue
                         </button>
                     </div>
-                    <div  className="signup-link">
+                    <div className="signup-link">
                         <p>Don't Have a Account ... ?</p>
-                        <Link className="link" to={"/signup"}> Signup </Link>
+                        <Link className="link" to={"/signup"}>
+                            {" "}
+                            Signup{" "}
+                        </Link>
                     </div>
                 </div>
             </div>

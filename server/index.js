@@ -71,6 +71,10 @@ app.post("/signup", async (req, res) => {
     }
 });
 
+app.get("/", (req, res) => {
+    return res.status(200).send("Ok from server");
+});
+
 const PORT = 4000;
 dbConnect();
 app.listen(PORT, () => {
