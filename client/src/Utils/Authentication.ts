@@ -1,6 +1,8 @@
 import axios from "axios";
 import { setJWT } from "../Reducers/slices/AuthSlice";
 
+
+
 interface User {
     email: string;
     password: string;
@@ -15,7 +17,7 @@ interface lUser {
 export const signupUser = async (userData: User) => {
     try {
         const response = await axios.post(
-            "http://localhost:4000/signup",
+            "https://breathe-esg.onrender.com/signup",
             userData
         );
 
@@ -32,7 +34,7 @@ export const loginUser = async (
 ) => {
     try {
         const response = await axios.post(
-            "http://localhost:4000/login",
+            "https://breathe-esg.onrender.com/login",
             userData
         );
 
